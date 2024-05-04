@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.cafemangement.ThongKeController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="15.0" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="932.800048828125" minWidth="10.0" prefWidth="757.6000244140625" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="587.2000122070312" minWidth="10.0" prefWidth="427.9999755859376" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="171.0" minHeight="0.0" prefHeight="46.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="655.0" minHeight="10.0" prefHeight="624.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="398.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <TableView fx:id="hoadonTableView" prefHeight="654.0" prefWidth="602.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+        <columns>
+          <TableColumn fx:id="maHoaDonCol" prefWidth="86.40002459287643" text="Some bills" />
+          <TableColumn fx:id="tenKHCol" prefWidth="138.4000244140625" text="Customer name" />
+            <TableColumn fx:id="thanhTienCol" minWidth="0.0" prefWidth="127.199951171875" text="Total amount" />
+            <TableColumn fx:id="tienTraCol" prefWidth="89.60003662109375" text="Payment" />
+            <TableColumn fx:id="tienThoiCol" prefWidth="93.5999755859375" text="Change" />
+            <TableColumn fx:id="ngayGiaoDichCol" prefWidth="119.20001220703125" text="Day trading" />
+            <TableColumn fx:id="nhanVienTaoCol" prefWidth="95.2000732421875" text="Created by staff" />
+        </columns>
+      </TableView>
+      <GridPane GridPane.columnIndex="1">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <DatePicker fx:id="fromDayDatePicker" promptText="From date" />
+            <DatePicker fx:id="toDayDatePicker" promptText="To date" GridPane.columnIndex="1" />
+            <Button fx:id="reloadButton" mnemonicParsing="false" onAction="#handleReloadButtonClick" text="Reload list" GridPane.columnIndex="2" />
+         </children>
+      </GridPane>
+      <BarChart GridPane.columnIndex="2" GridPane.rowIndex="1">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </BarChart>
+   </children>
+</GridPane>

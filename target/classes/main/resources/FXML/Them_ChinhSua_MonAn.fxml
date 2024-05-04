@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<StackPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.cafemangement.addSPController">
+    <children>
+        <BorderPane fx:id="ThemMonAn_BorderPane" maxHeight="350.0" maxWidth="550.0" prefHeight="350.0" prefWidth="550.0">
+            <bottom>
+                <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="20.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <Button fx:id="Add_Edit_MonAnButton" mnemonicParsing="false" onAction="#AddSP" text="Add product" />
+                    </children>
+                </HBox>
+            </bottom>
+            <top>
+                <BorderPane maxHeight="75.0" prefHeight="75.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                    <left>
+                        <HBox alignment="CENTER_LEFT" maxHeight="75.0" prefHeight="75.0" prefWidth="100.0" spacing="10.0" BorderPane.alignment="CENTER">
+                            <children>
+                                <Button fx:id="GoBackButton" mnemonicParsing="false" text="Come back" />
+                            </children>
+                            <padding>
+                                <Insets left="10.0" right="10.0" />
+                            </padding>
+                        </HBox>
+                    </left>
+                    <center>
+                        <Label fx:id="pageTitle" text="Add new drinks" BorderPane.alignment="CENTER">
+                            <font>
+                                <Font name="System Bold" size="30.0" />
+                            </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.43529412150382996" green="0.13725490868091583" blue="0.13725490868091583" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.43529412150382996" green="0.13725490868091583" blue="0.13725490868091583" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                        </Label>
+                    </center>
+                </BorderPane>
+            </top>
+            <center>
+                <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                    <center>
+                        <GridPane BorderPane.alignment="CENTER">
+                            <columnConstraints>
+                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="134.0" />
+                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="266.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints maxHeight="109.0" minHeight="10.0" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="113.0" minHeight="10.0" prefHeight="35.600012207031256" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="113.0" minHeight="10.0" prefHeight="29.199987792968763" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <Label text="Product name (*)" textAlignment="CENTER" wrapText="true">
+                                    <GridPane.margin>
+                                        <Insets />
+                                    </GridPane.margin>
+                                </Label>
+                                <Label text="Product describe (*)" textAlignment="CENTER" wrapText="true" GridPane.rowIndex="1">
+                                    <GridPane.margin>
+                                        <Insets />
+                                    </GridPane.margin>
+                                </Label>
+                                <Label text="Price  (*)" textAlignment="CENTER" wrapText="true" GridPane.rowIndex="2">
+                                    <GridPane.margin>
+                                        <Insets />
+                                    </GridPane.margin>
+                                </Label>
+                                <TextField fx:id="TenMonAn_Field" GridPane.columnIndex="1" />
+                                <TextField fx:id="GiaBan_Field" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                <TextField fx:id="MoTaSP_Field" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                            </children>
+                        </GridPane>
+                    </center>
+                    <bottom>
+                        <BorderPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                            <center>
+                                <GridPane BorderPane.alignment="CENTER">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <TextField fx:id="imageLink_Field" editable="false" prefHeight="31.0" prefWidth="168.0" promptText="Ảnh mặc định" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnSpan="2" GridPane.rowIndex="2">
+                                            <children>
+                                                <Button fx:id="browseButton" mnemonicParsing="false" onAction="#browseButtonClicked" text="Browse" />
+                                            </children>
+                                        </HBox>
+                                        <Label text="Choose a photo for the product" GridPane.columnSpan="2" />
+                              <ComboBox fx:id="comboBox" prefWidth="150.0" GridPane.columnIndex="1" />
+                                    </children>
+                                    <BorderPane.margin>
+                                        <Insets left="20.0" />
+                                    </BorderPane.margin>
+                                </GridPane>
+                            </center>
+                            <left>
+                                <VBox fx:id="outsideImageView_VBox" alignment="CENTER" maxHeight="150.0" maxWidth="150.0" minHeight="150.0" minWidth="150.0" prefHeight="150.0" prefWidth="150.0" BorderPane.alignment="CENTER">
+                                    <children>
+                                        <ImageView fx:id="MonAnImage_Display" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true">
+                                            <image>
+                                                <Image url="@../Default_Images/fast-food.png" />
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                </VBox>
+                            </left>
+                        </BorderPane>
+                    </bottom>
+                </BorderPane>
+            </center>
+        </BorderPane>
+    </children>
+</StackPane>
